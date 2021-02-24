@@ -1,84 +1,75 @@
 import React from 'react'
 import styled from 'styled-components'
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import ChatInput from './ChatInput'
+import ChatMessage from './ChatMessage'
 
-function Chat() { 
-
+function Chat() {
     return (
         <Container>
-             
-            <Main>
-                <Header>
-                    <UserContainer>
-                        #
-                        <Name>
-                            Coding
-                        </Name>                    
-                        <StarBorderIcon />
-                    </UserContainer> 
-                    <DetailsContainer>
-                        <Details>
-                            Details
-                        </Details>
-                        <ErrorOutlineIcon />
-                    </DetailsContainer> 
-                            
-                </Header>
-                <ProfileStatus>
+            <Header>
+                <Channel>
+                    <ChannelName>
+                        # clever
+                    </ChannelName>
+                    <ChannelInfo>
                     Company-wide announcements and work-based matters
-                </ProfileStatus> 
-            </Main>
-            <ChatSpace>
-
-            </ChatSpace>
-            
+                    </ChannelInfo>
+                </Channel>
+                <ChannelDetails>
+                    <div>
+                        Details
+                    </div>
+                    <Info />
+                </ChannelDetails>
+            </Header>
+            <MessageContainer>
+                <ChatMessage />
+            </MessageContainer>
+            <ChatInput />
         </Container>
 
     )
 }
 
-export default Chat
+export default Chat;
 
+const Container = styled.div`
+    display: grid;
+    grid-template-rows: 64px auto min-content;
+`
 
-const Container = styled.div``
+const Channel = styled.div``
 
-const Main = styled.div`
-height: 64px;
-border-bottom: 1px solid #808080;
-padding-left 16px;
+const ChannelDetails = styled.div`
+    display: flex;
+    align-items: center;
+    color: #606060;
+`
+
+const ChannelName = styled.div`
+    font-weight: 700;
+`
+
+const ChannelInfo = styled.div`
+    font-weight: 400;
+    color: #606060;
+    font-size: 13px;
+    margin-top: 8px;
+`
+
+const Info = styled(InfoOutlinedIcon)`
+    margin-left: 10px;
 `
 
 const Header = styled.div`
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
-    position: relative;    
+    border-bottom: 1px solid rgba(83, 39, 83,.13);
+    justify-content: space-between;
 `
 
-const UserContainer = styled.div`
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
+const MessageContainer = styled.div`
 `
-
-const DetailsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    padding-right: 16px; 
-    position: absolute;
-    right: 0;
-`
-const Name = styled.div`
-    font-weight: bold;
-    padding: 16x 16px;
-`
-const ProfileStatus = styled.div`
-    color: #808080;
-`
-
-const Details = styled.div`
-    padding-right: 16px;
-`
-
-const ChatSpace = styled.div``
-
