@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { sidebarItemsData } from '../data/SidebarData'
+import AddIcon from '@material-ui/icons/Add';
+import { channelItemsData } from '../data/ChannelsData'
 
 function Sidebar() {
     return (
@@ -25,6 +27,24 @@ function Sidebar() {
                 }
                 
             </MainChannels>
+            <ChannelsContainer>
+                <NewchannelContainer>
+                    <div>
+                        Channels
+                    </div>
+                    <AddIcon />
+                </NewchannelContainer>
+                <ChannelsList>
+                {
+                    channelItemsData.map(item => (
+                        <Channel>
+                            {item.tag}
+                            {item.name}
+                        </Channel>
+                    ))
+                }
+                </ChannelsList>
+            </ChannelsContainer>
             
         </Container>
     )
@@ -61,7 +81,9 @@ const NewMessage = styled.div`
     border-radius: 50%;
     cursor: pointer;
 `
-const MainChannels = styled.div``
+const MainChannels = styled.div`
+    padding-top; 20px;
+`
 
 const MainChannelItem = styled.div`
     color: rgb(188, 171,188);
@@ -71,6 +93,36 @@ const MainChannelItem = styled.div`
     align-items: center;
     padding-left: 19px;
     cursor: pointer;
+    :hover {
+        background: #350D36;
+    }
+`
+
+const ChannelsContainer = styled.div`
+    color: rgb(188,171,188);
+    margin-top: 10px;
+`
+
+
+const NewchannelContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;
+    padding: 0 19px;
+`
+
+const ChannelsList = styled.div``
+
+const Channel = styled.div`
+    height: 28px;
+    display: flex;
+    align-items: center;
+    padding-left: 19px;
+    cursor: pointer;
+    :hover {
+        background: #350D36;
+    }
 `
 
 // https://www.youtube.com/watch?v=ml_04VfhrNs   1:59:52
