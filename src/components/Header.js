@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from '../themes/theme';
+import { GlobalStyles } from '../themes/global';
 import styled from 'styled-components'
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 function Header() {
+
+    const [theme, setTheme] = useState('light');
+      
+      // The function that toggles between themes
+      const toggleTheme = () => {
+        // if the theme is not light, then set it to dark
+        if (theme === 'light') {
+          setTheme('dark');
+        // otherwise, it should be light
+        } else {
+          setTheme('light');
+        }
+      }
+
     return (
         <Container>
-            <Main>
+            <Toggler>
+                <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+                    <>     
+                        <GlobalStyles /> 
+                        <button onClick={toggleTheme}>Toggle theme</button>
+                    </>
+                </ThemeProvider>
+            </Toggler>
+            <Main>               
                 <AccessTimeIcon />
                 <SearchContainer>
                     <Search>
@@ -14,6 +39,7 @@ function Header() {
                     </Search>
                 </SearchContainer>
                 <HelpOutlineIcon />
+                
             </Main>
             <UserContainer>
                 <Name>
@@ -38,7 +64,7 @@ const Container = styled.div`
     justify-content: center;
     position: relative;
     z-index: 10;
-    box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
+    box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);    
 `
 
 const Main = styled.div`
@@ -93,4 +119,9 @@ const UserImage = styled.div`
     img  {
         width: 100%;
     }
+`
+
+const Toggler = styled.div`
+    position: absolute;
+    left: 0;
 `

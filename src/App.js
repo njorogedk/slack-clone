@@ -11,12 +11,12 @@ import Sidebar from './components/Sidebar';
 import styled from 'styled-components'
 
 function App() {
-  return (
+  
+return (   
     <div className="App">      
       <Router>   
         <Container>   
           <Header />
-
             <Main>
               <Sidebar />
               <Switch>
@@ -30,7 +30,7 @@ function App() {
             </Main>
           </Container>    
     </Router>
-    </div>
+    </div>    
   );
 }
 

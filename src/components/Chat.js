@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
-function Chat() {
+function Chat() { 
+
     return (
         <Container>
+             
             <Main>
                 <Header>
                     <UserContainer>
@@ -30,6 +32,7 @@ function Chat() {
             <ChatSpace>
 
             </ChatSpace>
+            
         </Container>
 
     )
