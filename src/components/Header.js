@@ -20,7 +20,7 @@ function Header() {
                     Dickson
                 </Name>
                 <UserImage>
-                    <img src="https://i.imgur.com/6VBx3io.png" />
+                    <img src="https://i.imgur.com/6VBx3io.png" alt="userimage"/>
                 </UserImage>
             </UserContainer>
         </Container>
@@ -35,21 +35,28 @@ const Container = styled.div`
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
 `
 
 const Main = styled.div`
     display: flex;
+    margin: 0 16px;
 `
 
 const UserContainer = styled.div`
     display: flex;
     align-items: center;
     padding-right: 16px; 
+    position: absolute;
+    right: 0;
 `
 
 const SearchContainer = styled.div`
     min-width: 400px;
+    margin: 0 16px;
 `
 
 const Search = styled.div`
@@ -73,8 +80,17 @@ const Search = styled.div`
     }
 `
 
-const Name = styled.div``
+const Name = styled.div`
+    padding-right: 16px;
+`
 
-const UserImage = styled.div``
+const UserImage = styled.div`
+    width: 28px;
+    height: 28px;
+    border: 2px solid white;
+    border-radius: 3px;
 
-// https://www.youtube.com/watch?v=ml_04VfhrNs   -1:11:41
+    img  {
+        width: 100%;
+    }
+`
