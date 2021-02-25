@@ -8,26 +8,26 @@ import AppsIcon from '@material-ui/icons/Apps';
 export const sidebarItemsData = [
     {
         icon: <MessageIcon />,
-        name: "Thread"
+        text: "Thread"
     },
     {
         icon: <InboxIcon />,
-        name: "All DMs"
+        text: "All DMs"
     },
     {
         icon: <DraftsIcon />,
-        name: "Mentions & Reactions"
+        text: "Mentions & Reactions"
     },
     {
         icon: <BookmarkBorderIcon />,
-        name: "Saved Items"
+        text: "Save Items"
     },
     {
         icon: <PeopleIcon />,
-        name: "Peoples & Groups"
+        text: "Peoples & Groups"
     },
     {
         icon: <AppsIcon />,
-        name: "More"
+        text: "More"
     }
 ]
