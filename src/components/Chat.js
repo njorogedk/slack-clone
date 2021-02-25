@@ -24,9 +24,10 @@ function Chat() {
                 </ChannelDetails>
             </Header>
             <MessageContainer>
-                <ChatMessage />
+                <ChatMessage />               
             </MessageContainer>
             <ChatInput />
+            
         </Container>
 
     )
@@ -71,5 +72,4 @@ const Header = styled.div`
     justify-content: space-between;
 `
 
-const MessageContainer = styled.div`
-`
+const MessageContainer = styled.div``
